@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Placeholder Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        button { padding: 10px 20px; background: #b93c4f; color: white; border: none; cursor: pointer; }
+        #output { margin-top: 20px; padding: 20px; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Placeholder Images</h1>
+        <p>Klik tombol di bawah untuk membuat gambar placeholder:</p>
+        <button onclick="generateImages()">Generate Images</button>
+        <div id="output"></div>
+    </div>
+    
+    <script>
+        function generateImages() {
+            const images = [
+                'logo.png', 'hero-visual.png', 'about-visual.jpg',
+                'product-1.jpg', 'product-2.jpg', 'product-3.jpg',
+                'product-4.jpg', 'product-5.jpg', 'product-6.jpg',
+                'service-1.jpg', 'service-2.jpg', 'service-3.jpg',
+                'testimonial-1.jpg', 'testimonial-2.jpg', 'testimonial-3.jpg',
+                'placeholder.jpg'
+            ];
+            
+            let output = '<h2>Gambar yang dibutuhkan:</h2><ul>';
+            images.forEach(img => {
+                output += `<li>${img} - Simpan di folder images/</li>`;
+            });
+            output += '</ul>';
+            output += '<p>Anda bisa mendapatkan gambar placeholder dari:';
+            output += '<ul>';
+            output += '<li><a href="https://unsplash.com" target="_blank">Unsplash.com</a></li>';
+            output += '<li><a href="https://pexels.com" target="_blank">Pexels.com</a></li>';
+            output += '<li><a href="https://placeholder.com" target="_blank">Placeholder.com</a></li>';
+            output += '</ul>';
+            
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>
